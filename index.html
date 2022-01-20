@@ -7,6 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>轮子</title>
   <style>
+      img {
+          max-width: 100%
+      }
+
       * {
           margin: 0;
           padding: 0;
@@ -38,10 +42,10 @@
           margin: 20px;
       }
   </style>
+
 </head>
 <body>
 <div id="app">
-  <div>
   <g-row gutter="20">
     <g-col>1</g-col>
     <g-col>2</g-col>
@@ -61,10 +65,10 @@
     <g-col span="2">1</g-col>
     <g-col span="22" offset="2">2</g-col>
   </g-row>
-    <g-row gutter="20">
-      <g-col span="4">1</g-col>
-      <g-col span="20">22</g-col>
-    </g-row>
+  <g-row gutter="20">
+    <g-col span="4">1</g-col>
+    <g-col span="20">22</g-col>
+  </g-row>
   <g-row gutter="20">
     <g-col :span="4">1</g-col>
     <g-col :span="18" offset="2">2</g-col>
@@ -79,33 +83,33 @@
     <g-col :span="4" offset="6">2</g-col>
     <g-col :span="8" offset="2">11</g-col>
   </g-row>
-  </div>
-  <hr/>
-  <div class="box">
-    <g-input v-model="message"></g-input>
-    <p>{{ message }}</p>
-    <button @click="message+=1">+1</button>
-  </div>
-
-  <div class="box">
-    <g-button :loading=loading1 @click="loading1 = !loading1">
-      按钮
-    </g-button>
-    <g-button icon="setting" :loading=loading2 @click="loading2 = !loading2">
-      按钮
-    </g-button>
-    <g-button icon="setting" icon-position="right" :loading=loading3
-              @click="loading3 = !loading3">
-      按钮
-    </g-button>
-    <g-button-group>
-      <g-button icon="left">上一页</g-button>
-      <g-button>更多</g-button>
-      <g-button icon="right" icon-position="right">下一页</g-button>
-    </g-button-group>
-  </div>
-
 </div>
+<hr/>
+<div class="box">
+  <g-input v-model="message"></g-input>
+  <p>{{ message }}</p>
+  <button @click="message+=1">+1</button>
+</div>
+
+<div class="box">
+  <g-button :loading=loading1 @click="loading1 = !loading1">
+    按钮
+  </g-button>
+  <g-button icon="setting" :loading=loading2 @click="loading2 = !loading2">
+    按钮
+  </g-button>
+  <g-button icon="setting" icon-position="right" :loading=loading3
+            @click="loading3 = !loading3">
+    按钮
+  </g-button>
+  <g-button-group>
+    <g-button icon="left">上一页</g-button>
+    <g-button>更多</g-button>
+    <g-button icon="right" icon-position="right">下一页</g-button>
+  </g-button-group>
+</div>
+
+
 <script src="./src/app.js"></script>
 <script src="//at.alicdn.com/t/font_3144598_7vwl4pgwo78.js"></script>
 
