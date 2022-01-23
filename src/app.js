@@ -27,7 +27,6 @@ Vue.component("g-footer", Footer)
 Vue.component("g-toast",Toast)
 Vue.use(plugin)
 
-
 import createElement from 'vue'
 
 const h = createElement
@@ -41,16 +40,25 @@ new Vue({
     message: 'hi'
   },
   created(){
-    this.$toast('文字', {
-      enableHtml: false
+    this.$toast('你的智商需要充值！', {
+      position: 'middle',
+      enableHtml: false,
+      closeButton: {
+        text: '已充值',
+        callback () {
+          console.log('他说已经充值智商了')
+        }
+      },
+      autoClose: false,
+      autoCloseDelay: 3
     })
+
   },
   methods: {
     showToast(){
     }
   }
 })
-
 
 
 
