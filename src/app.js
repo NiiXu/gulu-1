@@ -28,25 +28,28 @@ Vue.component("g-toast",Toast)
 Vue.use(plugin)
 
 
+import createElement from 'vue'
+
+const h = createElement
+
 new Vue({
-  el: "#app",
+  el: '#app',
   data: {
     loading1: false,
-    loading2: false,
+    loading2: true,
     loading3: false,
-    message:'hi'
+    message: 'hi'
   },
   created(){
-
+    this.$toast('文字', {
+      enableHtml: false
+    })
   },
   methods: {
     showToast(){
-      this.$toast('我是message')
-
     }
   }
 })
-
 
 
 
