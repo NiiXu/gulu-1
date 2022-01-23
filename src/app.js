@@ -43,9 +43,18 @@ new Vue({
 
   },
   methods: {
-    showToast(){
-      this.$toast('你的智商需要充值！', {
-        position: 'bottom',
+    showToast1(){
+      this.showToast('top')
+    },
+    showToast2(){
+      this.showToast('middle')
+    },
+    showToast3(){
+      this.showToast('bottom')
+    },
+    showToast(position){
+      this.$toast(`你的智商目前为 ${parseInt(Math.random() * 100)}。你的智商需要充值！`, {
+        position,
         enableHtml: false,
         closeButton: {
           text: '已充值',
@@ -56,12 +65,9 @@ new Vue({
         autoClose: false,
         autoCloseDelay: 3
       })
-
     }
   }
 })
-
-
 
 
 
