@@ -2,21 +2,21 @@ import Vue from "vue"
 import Button from "./button"
 import Icon from "./icon"
 import ButtonGroup from "./buttonGroup"
-import Input  from "./input"
-import Row  from "./row"
-import Col  from "./col"
-import Layout from './layout'
-import Header from './header'
-import Sider from './sider'
-import Content from './content'
+import Input from "./input"
+import Row from "./row"
+import Col from "./col"
+import Layout from "./layout"
+import Header from "./header"
+import Sider from "./sider"
+import Content from "./content"
 import Footer from "./footer"
 import Toast from "./toast"
 import plugin from "./plugin"
-import Tabs from './tabs'
-import TabsHead from './tabs-head'
-import TabsBody from './tabs-bodys'
-import TabsItem from './tabs-item'
-import TabsPane from './tabs-pane'
+import Tabs from "./tabs"
+import TabsHead from "./tabs-head"
+import TabsBody from "./tabs-bodys"
+import TabsItem from "./tabs-item"
+import TabsPane from "./tabs-pane"
 
 Vue.component("g-button", Button)
 Vue.component("g-icon", Icon)
@@ -29,44 +29,48 @@ Vue.component("g-header", Header)
 Vue.component("g-sider", Sider)
 Vue.component("g-content", Content)
 Vue.component("g-footer", Footer)
-Vue.component("g-toast",Toast)
-Vue.component('g-tabs', Tabs)
-Vue.component('g-tabs-head', TabsHead)
-Vue.component('g-tabs-body', TabsBody)
-Vue.component('g-tabs-item', TabsItem)
-Vue.component('g-tabs-pane', TabsPane)
+Vue.component("g-toast", Toast)
+Vue.component("g-tabs", Tabs)
+Vue.component("g-tabs-head", TabsHead)
+Vue.component("g-tabs-body", TabsBody)
+Vue.component("g-tabs-item", TabsItem)
+Vue.component("g-tabs-pane", TabsPane)
 Vue.use(plugin)
 
-import createElement from 'vue'
+import createElement from "vue"
 
 const h = createElement
 
 new Vue({
-  el: '#app',
+  el: "#app",
   data: {
-    selectedTab: 'sports'
+    selectedTab: "sports"
   },
-  created(){
+  created() {
 
   },
   methods: {
-    showToast1(){
-      this.showToast('top')
+    yyy(data) {
+      console.log("yyy")
+      console.log(data)
     },
-    showToast2(){
-      this.showToast('middle')
+    showToast1() {
+      this.showToast("top")
     },
-    showToast3(){
-      this.showToast('bottom')
+    showToast2() {
+      this.showToast("middle")
     },
-    showToast(position){
+    showToast3() {
+      this.showToast("bottom")
+    },
+    showToast(position) {
       this.$toast(`你的智商目前为 ${parseInt(Math.random() * 100)}。你的智商需要充值！`, {
         position,
         enableHtml: false,
         closeButton: {
-          text: '已充值',
-          callback () {
-            console.log('他说已经充值智商了')
+          text: "已充值",
+          callback() {
+            console.log("他说已经充值智商了")
           }
         },
         autoClose: 3,
@@ -74,9 +78,6 @@ new Vue({
     }
   }
 })
-
-
-
 
 
 // import chai from "chai"
