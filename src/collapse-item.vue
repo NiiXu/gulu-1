@@ -20,37 +20,31 @@ export default {
     name: {
       type: String,
       required: true
-    },
-    data() {
-      return {
-        open: false
-      }
-    },
-    inject: ["eventBus"],
-    mounted() {
-      this.eventBus && this.eventBus.$on("update:selected", (name) => {
-        if (name !== this.name) {
-          this.close()
-        } else {
-          this.show()
-        }
-      })
-    },
-    methods: {
-      toggle() {
-        if (this.open) {
-          this.open = false
-        } else {
-          this.eventBus && this.eventBus.$emit("update:selected", this.name)
-        }
-      },
-      close() {
+    }
+  },
+  data() {
+    return {
+      open: false,
+    }
+  },
+  inject: ["eventBus"],
+  mounted() {
+    this.eventBus && this.eventBus.$on("update:selected", (names) => {
+      if (names.indexOf(this.name) >= 0) {
+        this.open = true
+      } else {
         this.open = false
       }
+    })
+  },
+  methods: {
+    toggle() {
+      if (this.open) {
+        this.eventBus && this.eventBus.$emit("update:removeSelected", this.name)
+      } else {
+        this.eventBus && this.eventBus.$emit("update:addSelected", this.name)
+      }
     },
-    show() {
-      this.open = true
-    }
   },
 }
 </script>
